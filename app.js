@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:3000"],
+    origin: ["http://localhost:5173", "http://localhost:5174"],
     credentials: true,
   })
 );
@@ -30,6 +30,9 @@ const websiteInfoRouter = require("./router/website.info.router");
 const socialsRouter = require("./router/socials.router");
 const messagesRouter = require("./router/messages.router");
 const callingTimeRouter = require("./router/callingtime.router");
+const securityRouter = require("./router/security.router");
+
+app.use("/api/settings/security", securityRouter);
 
 app.use("/api/why-pick-us", whyPickUsRouter);
 

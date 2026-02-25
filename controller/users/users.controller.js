@@ -5,7 +5,8 @@ const safeUser = require("./safeUser");
 const getAllUsers = async (req, res) => {
   try {
     const users = await db.select().from(usersTable);
-    const safeUsers = users.map(safeUser);
+
+    const safeUsers = users.map((user) => safeUser(user));
     res.status(200).json(safeUsers);
   } catch (error) {
     console.error("Error fetching users:", error);

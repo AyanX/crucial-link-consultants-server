@@ -11,25 +11,36 @@ const inEATTime = (createdAt) => {
 };
 
 const textToArray = (text) => {
-  if (!text) return [];
-    // use json.parse to convert the string back to an array    
-    try {
-        const array = JSON.parse(text);
-        return array;
-    } catch (error) {
-        console.error("Error parsing skills:", error);
-        return [];
-    }
-}
+  if (!text || text === "undefined" || text === "null") {
+    return [];
+  }
+
+  if (Array.isArray(text)) {
+    return text;
+  }
+
+  if (typeof text !== "string") {
+    return [];
+  }
+
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    console.error("Error parsing skills:", text);
+    return [];
+  }
+};
 
 const safeUser = (user) => {
+  const newSkills = textToArray(user.skills)
+
   return {
     id: user.id,
     name: user.name,
     bio: user.bio,
     role: user.role,
     title: user.title,
-    skills: textToArray(user.skills),
+    skills: newSkills,
     image: user.image,
     created_at: inEATTime(user.created_at),
     updated_at: inEATTime(user.updated_at),

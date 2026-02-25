@@ -7,6 +7,7 @@ const {
   websiteInfoTable,
   whyPickUsTable,
   callingTimesTable,
+  adminTable,
   socialsTable
 } = require("../drizzle/schema");
 
@@ -17,6 +18,7 @@ module.exports = {
   messagesTable,
   contactsTable,
   websiteInfoTable,
+  adminTable,
   whyPickUsTable,
   socialsTable
 };

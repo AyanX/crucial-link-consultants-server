@@ -15,15 +15,15 @@ class messagesController {
     }
   }
   static async addMessage(req, res) {
-    const { name, email, subject, message, organization } = req.body;
+    const { fullName, organization, workEmail, subject, message } = req.body;
 
     try {
-      if (!(name && email && subject && message)) {
-        return res.satus(401).json({ message: "missing fields" });
+      if (!(fullName || workEmail || subject || message)) {
+        return res.status(401).json({ message: "missing fields" });
       }
       await db.insert(messagesTable).values({
-        name,
-        email,
+        name: fullName,
+        email: workEmail,
         subject,
         message,
         organization: organization || null,
