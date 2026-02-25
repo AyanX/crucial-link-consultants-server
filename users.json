@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Jefferson Mesiakaa",
+    "role": "Director",
+    "title": "Director, Research Lead",
+    "bio": "A seasoned research professional with over a decade of experience in program design and evidence analysis with emphasis on M&E and KM. Holds a PhD in Demography and brings strong multidisciplinary expertise.",
+    "image": null,
+    "skills": [
+      "Research Design",
+      "M&E Frameworks",
+      "Demography"
+    ]
+  },
+  {
+    "name": "Collins Mudiope",
+    "role": "Director",
+    "title": "Director, Field Specialist",
+    "bio": "An expert in public health programming with 9+ years delivering donor-funded programs. MBA candidate with deep expertise in data collection methodologies and reporting standards.",
+    "image": null,
+    "skills": [
+      "Field Operations",
+      "Public Health",
+      "Data Collection"
+    ]
+  },
+  {
+    "name": "Benson Onor",
+    "role": "Advisor",
+    "title": "Data Analytics Advisor",
+    "bio": "Highly skilled in data science and analytical frameworks with experience in statistical modelling, visualization and leveraging predictive modeling to inform strategic decision-making.",
+    "image": null,
+    "skills": [
+      "Data Science",
+      "Statistical Modeling",
+      "Visualization"
+    ]
+  },
+  {
+    "name": "Wangu Ishmael",
+    "role": "Advisor",
+    "title": "Strategy Advisor",
+    "bio": "Senior policy expert with deep expertise in socioeconomically diverse, conflict-sensitive, and context-specific leadership.",
+    "image": null,
+    "skills": [
+      "Policy Development",
+      "Governance",
+      "Conflict Analysis"
+    ]
+  },
+  {
+    "name": "George Vitaal",
+    "role": "Consultant",
+    "title": "Policy & Delivery Consultant",
+    "bio": "Independent policy strategist with decades of experience in program management, donor relations and operational leadership.",
+    "image": null,
+    "skills": [
+      "Policy Strategy",
+      "Donor Relations",
+      "Program Management"
+    ]
+  }
+]
