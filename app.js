@@ -4,7 +4,7 @@ const helmet = require("helmet");
 const path = require("path");
 require("dotenv").config();
 const app = express();
-
+const cookieParser = require("cookie-parser");
 app.use(express.json());
 
 app.use(
@@ -20,7 +20,6 @@ app.use(
   })
 );
 
-
 app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 
 const userRouter = require("./router/users.router");
@@ -31,16 +30,23 @@ const socialsRouter = require("./router/socials.router");
 const messagesRouter = require("./router/messages.router");
 const callingTimeRouter = require("./router/callingtime.router");
 const securityRouter = require("./router/security.router");
+const AuthRouter = require("./router/auth.router");
 
-app.use("/api/settings/security", securityRouter);
-
-app.use("/api/why-pick-us", whyPickUsRouter);
+app.use(cookieParser());
 
 app.get("/api/hello", (req, res) => {
   res.json({ message: "Hello from the server!" });
 });
 
+app.use("/api/settings/security", securityRouter);
+
+app.use("/api/why-pick-us", whyPickUsRouter);
+
+
+
 app.use("/api/users", userRouter);
+
+app.use("/api/auth",AuthRouter)
 
 app.use("/api/contacts", contactsRouter);
 

@@ -8,13 +8,14 @@ const {
   deleteUser,
 } = require("../controller/users/users.controller");
 const upload  = require("../utils/middlewares/multer");
+const useAuth = require("../utils/middlewares/useAuth");
 
 userRouter.get("/", getAllUsers);
 
-userRouter.post("/", upload, addUser);
+userRouter.post("/", useAuth, upload, addUser);
 
-userRouter.patch("/:id", upload,updateUser);
+userRouter.patch("/:id", useAuth, upload, updateUser);
 
-userRouter.delete("/:id", deleteUser);
+userRouter.delete("/:id", useAuth, deleteUser);
 
 module.exports = userRouter;

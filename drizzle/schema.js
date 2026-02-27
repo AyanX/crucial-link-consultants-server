@@ -84,6 +84,7 @@ const adminTable = mysqlTable("admin", {
   username: varchar("username", { length: 255 }).notNull(),
   email: varchar("email", { length: 255 }).notNull(),
   password: varchar("password", { length: 255 }).notNull(),
+  refreshToken: varchar("refreshToken", { length: 255 }).default(""),
   created_at: timestamp("created_at").defaultNow(),
   updated_at: timestamp("updated_at").defaultNow().onUpdateNow(),
 });
