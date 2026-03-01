@@ -18,8 +18,8 @@ class messagesController {
     const { fullName, organization, workEmail, subject, message } = req.body;
 
     try {
-      if (!(fullName || workEmail || subject || message)) {
-        return res.status(401).json({ message: "missing fields" });
+      if (!fullName || !workEmail || !subject || !message) {
+        return res.status(403).json({ message: "missing fields" });
       }
       await db.insert(messagesTable).values({
         name: fullName,

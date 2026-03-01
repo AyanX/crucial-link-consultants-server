@@ -42,8 +42,6 @@ app.use("/api/settings/security", securityRouter);
 
 app.use("/api/why-pick-us", whyPickUsRouter);
 
-
-
 app.use("/api/users", userRouter);
 
 app.use("/api/auth",AuthRouter)

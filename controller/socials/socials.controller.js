@@ -17,7 +17,7 @@ class socialsController {
                 facebook: socials[0].facebook,
                 twitter: socials[0].twitter,
                 linkedin: socials[0].linkedin,
-                supportEmail: socials[0].email,
+                supportEmail: socials[0].email || "",
                 
             }
             res.status(200).json(response);
