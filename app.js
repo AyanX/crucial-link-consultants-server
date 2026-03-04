@@ -31,6 +31,7 @@ const messagesRouter = require("./router/messages.router");
 const callingTimeRouter = require("./router/callingtime.router");
 const securityRouter = require("./router/security.router");
 const AuthRouter = require("./router/auth.router");
+const careersRouter = require("./router/careers.router");
 
 app.use(cookieParser());
 
@@ -55,6 +56,8 @@ app.use("/api/website-info", websiteInfoRouter);
 app.use("/api/messages", messagesRouter);
 
 app.use("/api/calling-times", callingTimeRouter);
+
+app.use("/api/careers", careersRouter);
 
 app.use((req, res) => {
   res.status(404).json({ error: "Endpoint not found" });

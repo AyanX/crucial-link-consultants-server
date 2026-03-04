@@ -99,10 +99,33 @@ const callingTimesTable = mysqlTable("calling_times", {
   updated_at: timestamp("updated_at").defaultNow().onUpdateNow(),
 });
 
+//careers messages schema
+const careersTable = mysqlTable("careers", {
+  id: int("id").primaryKey().autoincrement(),
+  fullName: varchar("fullName", { length: 255 }).notNull(),
+  email: varchar("email", { length: 255 }).notNull(),
+  isRead: boolean("isRead").default(false),
+  qualification: varchar("qualification", { length: 255 }).notNull(),
+  experience: varchar("experience", { length: 255 }).notNull(),
+  motivation: text("motivation").notNull(),
+  position: varchar("position", { length: 255 }).default("null"),
+  document_url: varchar("document_url", { length: 255 }).notNull(),
+  created_at: timestamp("created_at").defaultNow(),
+});
+
+
+const careerTopicsTable = mysqlTable("career_topics", {
+  id: int("id").primaryKey().autoincrement(),
+  topic: varchar("topic", { length: 255 }).notNull(),
+  created_at: timestamp("created_at").defaultNow(),
+});
+
 // export the schema
 
 module.exports = {
   usersTable,
+  careersTable,
+  careerTopicsTable,
   callingTimesTable,
   messagesTable,
   contactsTable,
