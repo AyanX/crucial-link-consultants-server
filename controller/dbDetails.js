@@ -10,6 +10,7 @@ const {
   adminTable,
   socialsTable,
   careerTopicsTable,
+  worksTable,
   careersTable
 } = require("../drizzle/schema");
 
@@ -20,6 +21,7 @@ module.exports = {
   usersTable,
   callingTimesTable,
   messagesTable,
+  worksTable,
   contactsTable,
   websiteInfoTable,
   adminTable,

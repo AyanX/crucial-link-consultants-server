@@ -1,3 +1,4 @@
+const { year } = require("drizzle-orm/mysql-core");
 const {
   mysqlTable,
   int,
@@ -120,10 +121,19 @@ const careerTopicsTable = mysqlTable("career_topics", {
   created_at: timestamp("created_at").defaultNow(),
 });
 
+const worksTable = mysqlTable("works", {
+  id: int("id").primaryKey().autoincrement(),
+  title: varchar("title", { length: 255 }).notNull(),
+  description: text("description").notNull(),
+  year:varchar("year", { length: 255 }).notNull(),
+  created_at: timestamp("created_at").defaultNow(),
+});
+
 // export the schema
 
 module.exports = {
   usersTable,
+  worksTable,
   careersTable,
   careerTopicsTable,
   callingTimesTable,

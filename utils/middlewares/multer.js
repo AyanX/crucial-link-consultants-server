@@ -49,7 +49,7 @@ const upload = (req, res, next) => {
     }
 
     // Remove trailing slash if exists
-    const baseUrl = process.env.APP_URL.replace(/\/$/, "");
+    const baseUrl = process.env.APP_URL.replace(/\/$/, "") 
 
     // Attach full public URL to request
     req.fileUrl = `${baseUrl}/uploads/${req.file.filename}`;

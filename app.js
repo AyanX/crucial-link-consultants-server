@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: ["http://localhost:5173", "http://localhost:5174", "https://cruciallinkconsultantslt.com","http://localhost:45678", "https://admin.cruciallinkconsultantslt.com"],
     credentials: true,
   })
 );
@@ -32,6 +32,7 @@ const callingTimeRouter = require("./router/callingtime.router");
 const securityRouter = require("./router/security.router");
 const AuthRouter = require("./router/auth.router");
 const careersRouter = require("./router/careers.router");
+const worksRouter = require("./router/works.router");
 
 app.use(cookieParser());
 
@@ -58,6 +59,8 @@ app.use("/api/messages", messagesRouter);
 app.use("/api/calling-times", callingTimeRouter);
 
 app.use("/api/careers", careersRouter);
+
+app.use("/api/works", worksRouter);
 
 app.use((req, res) => {
   res.status(404).json({ error: "Endpoint not found" });

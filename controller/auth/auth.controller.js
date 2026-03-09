@@ -12,7 +12,7 @@ class AuthController {
         try {
             const existingAdmin = await db.select().from(adminTable).where(eq(adminTable.email, email)).orderBy(desc(adminTable.created_at)).limit(1);
             if (existingAdmin.length === 0) {
-                return res.status(404).json({ message: "Admin entry not found" });
+                return res.status(403).json({ message: "Admin entry not found" });
             }
             const admin = existingAdmin[0];
             const isPasswordMatch = await comparePasswords(password, admin.password);
